@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.sns')
 
 @section('title', 'Top')
 

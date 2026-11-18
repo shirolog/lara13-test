@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
     public function index()
     {
+
         return view('index');
     }
 
@@ -33,6 +33,6 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'ポストを投稿しました');
     }
 }
